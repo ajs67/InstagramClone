@@ -14,7 +14,8 @@ def index(request):
 
 @login_required(login_url='signin')
 def settings(request):
-    return render(request, 'setting.html')
+    user_profile = Profile.objects.get(user=request.user)
+    return render(request, 'setting.html', {'user_profile': user_profile})
 
 
 def signup(request):
