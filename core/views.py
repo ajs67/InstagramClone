@@ -12,6 +12,10 @@ from .models import Profile
 def index(request):
     return render(request, 'index.html')
 
+@login_required(login_url='signin')
+def settings(request):
+    return render(request, 'setting.html')
+
 
 def signup(request):
 
@@ -33,6 +37,7 @@ def signup(request):
                 user.save()
 
                 # log user in and redirect to settings page
+                
 
                 # create a profile object for the new user
                 user_model = User.objects.get(username=username)
