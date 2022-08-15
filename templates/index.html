@@ -25,7 +25,7 @@
                         <!-- Logo -->
                         <div id="logo" class=" uk-hidden@s">
                             <a href="home.html">
-                                <b><h1 style="text-transform: uppercase;">Social Book</h1></b>
+                                <b><h1 style="text-transform: uppercase;">IG Clone</h1></b>
                             </a>
                         </div>
 
@@ -34,7 +34,7 @@
                         </div>-->
 
                         <div class="header_search">
-                            <input type="text" placeholder="Search for username..">
+                            <input type="text" placeholder="Search for users">
                             <div class="icon-search">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
@@ -207,7 +207,7 @@
                                 <div class="flex flex-1 items-center space-x-4">
                                     <a href="#">
                                         <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">  
-                                            <img src="{% static 'assets/images/avatars/avatar-2.jpg' %}" class="bg-gray-200 border border-white rounded-full w-8 h-8">
+                                            <img src="{{user_profile.profile_img.url}}" class="bg-gray-200 border border-white rounded-full w-8 h-8">
                                         </div>
                                     </a>
                                     <span class="block capitalize font-semibold "><a href="#">@{{post.user}}</a> </span>
