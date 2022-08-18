@@ -210,14 +210,14 @@
                                             <img src="{{user_profile.profile_img.url}}" class="bg-gray-200 border border-white rounded-full w-8 h-8">
                                         </div>
                                     </a>
-                                    <span class="block capitalize font-semibold "><a href="#">@{{post.user}}</a> </span>
+                                    <span class="block capitalize font-semibold "><a href="/profile/{{post.user}}">@{{post.user}}</a> </span>
                                 </div>
                               <div>
                                 <a href="#"> <i class="icon-feather-more-horizontal text-2xl hover:bg-gray-200 rounded-full p-2 transition -mr-1 "></i> </a>
                                 <div class="bg-white w-56 shadow-md mx-auto p-2 mt-12 rounded-md text-gray-500 hidden text-base border border-gray-100  " uk-drop="mode: hover;pos: top-right">
                               
                                     <ul class="space-y-1">
-                                      <li> 
+                                      <li>
                                           <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md ">
                                            <i class="uil-share-alt mr-1"></i> Share
                                           </a> 
@@ -301,7 +301,7 @@
                                 </div>-->
 
                                 <p>
-                                    <a href="#"><strong>{{post.user}}</strong></a> {{post.caption}}
+                                    <a href="/profile/{{post.user}}"><strong>{{post.user}}</strong></a> {{post.caption}}
                                 </p>
 
                                 <!--<div class="border-t pt-4 space-y-4 ">
