@@ -54,7 +54,7 @@
                          <!-- upload dropdown box -->
                         <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small" class="header_dropdown">
     
-                            <!-- notivication header -->
+                            <!-- notification header -->
                             <div class="px-4 py-3 -mx-5 -mt-4 mb-5 border-b">
                                 <h4>Upload Pics</h4>
                             </div>
@@ -178,6 +178,7 @@
                         </a>
                         <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
                             <ul>
+                                <li><a href="/profile/{{user.username}}"> Profile </a> </li>
                                 <li><a href="/settings"> Account settings </a> </li>
                                 <li><a href="logout"> Log Out</a></li>
                             </ul>
@@ -198,15 +199,16 @@
 
                         <!-- post 1-->
 
-                        {% for post in posts reversed %}
+                        {% for post, profile in posts reversed %}
+
                         <div class="bg-white shadow rounded-md  -mx-2 lg:mx-0">
 
                             <!-- post header-->
                             <div class="flex justify-between items-center px-4 py-3">
                                 <div class="flex flex-1 items-center space-x-4">
-                                    <a href="#">
+                                    <a href="/profile/{{post.user}}">
                                         <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">  
-                                            <img src="{{user_profile.profile_img.url}}" class="bg-gray-200 border border-white rounded-full w-8 h-8">
+                                            <img src="{{profile}}" class="bg-gray-200 border border-white rounded-full w-8 h-8">
                                         </div>
                                     </a>
                                     <span class="block capitalize font-semibold "><a href="/profile/{{post.user}}">@{{post.user}}</a> </span>

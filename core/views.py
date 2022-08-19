@@ -14,24 +14,44 @@ import random as r
 def index(request):
     user_object = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=user_object)
+    all_users = User.objects.all()
 
     user_following_list = []
     feed = []
+    feed_list_profiles = []
+    feed_profiles = []
 
     user_following = FollowersCount.objects.filter(follower=request.user.username)
+
+    # Homepage Feed
 
     for users in user_following:
         user_following_list.append(users.user)
 
+    profile_list = []
     for usernames in user_following_list:
         feed_lists = Post.objects.filter(user=usernames)
         feed.append(feed_lists)
 
+        # filtered by posts
+        for post in feed_lists:
+            post_user_object = User.objects.get(username=post.user)
+            post_user_profile = Profile.objects.get(user=post_user_object)
+            feed_profiles = post_user_profile.profile_img
+            profile_list.append(feed_profiles.url)
+
+
     feed_list = list(chain(*feed))
+    feed_list_profiles = list(profile_list)
+    # zip the profile pictures with the posts together
+    feed_list = zip(feed_list, feed_list_profiles)
+
+    # # profiles of users in posts
+    # for users in feed_list:
+    #     feed_list_profiles.append(Profile.objects.get(user=users))
 
     # users you can follow suggestions
 
-    all_users = User.objects.all()
     user_following_all = []
 
     for user in user_following:
@@ -56,8 +76,13 @@ def index(request):
     suggestions_username_profile_list = list(chain(*username_profile_list))
 
 
-    posts = Post.objects.all()
-    return render(request, 'index.html', {'user_profile': user_profile, 'posts': feed_list, 'suggestions_username_profile_list': suggestions_username_profile_list[:4]})
+    #posts = Post.objects.all()
+    return render(request, 'index.html',
+                  {'user_profile': user_profile,
+                   'posts': feed_list,
+                   'feed_list_profiles': feed_list_profiles,
+                   'suggestions_username_profile_list': suggestions_username_profile_list[:4]
+                   })
 
 
 @login_required(login_url='signin')
