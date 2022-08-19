@@ -2,11 +2,12 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from django.contrib.auth.decorators import  login_required
+from django.contrib.auth.decorators import login_required
 from .models import Profile, Post, LikePost, FollowersCount
-from itertools import  chain
+from itertools import chain
 
 # Create your views here.
+
 
 @login_required(login_url='signin')
 def index(request):
@@ -77,7 +78,7 @@ def search(request):
         username = request.POST['username']
         username_object = User.objects.filter(username__icontains=username)
 
-        username_profile= []
+        username_profile = []
         username_profile_list = []
 
         for users in username_object:
