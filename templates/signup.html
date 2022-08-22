@@ -84,10 +84,13 @@
                     <div class="text-center mt-5 space-x-2">
 
                         </form>
-
+                <form action="" method="POST">
+                    {% csrf_token %}
                 <button type="submit" class="bg-gradient-to-br from-pink-500 py-3 rounded-md text-white text-xl to-red-400 w-full">Demo Website with Guest Login</button>
-                <p class="text-base"> Do you have an account? <a href="/signin"> Login </a></p>
-                            </p></br>
+                </form>
+                    <p class="text-base"> Do you have an account? <a href="/signin"> Login </a></p>
+                            </p>
+
                 </div>
 
 
