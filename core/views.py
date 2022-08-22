@@ -262,6 +262,9 @@ def signup(request):
     else:
         return render(request, 'signup.html')
 
+def guest_signup(request):
+    pass
+
 
 def signin(request):
 
