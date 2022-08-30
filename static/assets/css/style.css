@@ -1640,6 +1640,34 @@ header .header_inner .right-side .header-avatar {
   margin-left: 15px;
 }
 
+/*header .header_inner .right-side .profilepicture1 {
+  max-width = 100%;
+  max-height = 100%;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border;
+  border_white;
+  margin-left: 15px;
+  rounded_full;
+*//*  img:hover{
+            box-shadow: 0 0 20px 2px rgba(0,140,186,0.5);
+            }*//*
+}*/
+
+/*        .profilepicture1 {
+
+            bg-gray-200;
+            border;
+            border-radius: 100px;
+            padding: 1px;
+            border_white;
+            rounded_full;
+        }*/
+
+
+
 .is_fixed {
   -webkit-transition: all 0.8s;
   transition: all 0.8s;

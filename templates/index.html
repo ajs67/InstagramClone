@@ -17,6 +17,30 @@
     <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<style>
+        img {
+            max-width = 100%;
+            max-height = 100%;
+        }
+        img:hover{
+            box-shadow: 0 0 2px 2px rgba(0,140,186,0.5);
+        }
+        .profilepicture1 {
+&lt;!&ndash;            object-position: 50% 0px;&ndash;&gt;
+&lt;!&ndash;            object-position: 50% 50%;&ndash;&gt;
+            width: 10px;
+            height: 10px;
+            bg-gray-200;
+            border;
+&lt;!&ndash;            border-radius: 50%;&ndash;&gt;
+            padding: 1px;
+            border_white;
+            rounded_full;
+&lt;!&ndash;            object-position: 50% 0px;&ndash;&gt;
+        }
+    </style>-->
+
+
 </head>
 
 <body>
@@ -207,7 +231,7 @@
                             <div class="flex justify-between items-center px-4 py-3">
                                 <div class="flex flex-1 items-center space-x-4">
                                     <a href="/profile/{{post.user}}">
-                                        <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">  
+                                        <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">
                                             <img src="{{profile}}" class="bg-gray-200 border border-white rounded-full w-8 h-8">
                                         </div>
                                     </a>
@@ -257,8 +281,8 @@
                                     <img src="{{post.image.url}}" alt="">
                                 </a>
                             </div>
-                            
-    
+
+
                             <div class="py-3 px-4 space-y-3"> 
                                
                                 <div class="flex space-x-4 lg:font-bold">
@@ -357,17 +381,24 @@
                             <div class="divide-gray-300 divide-gray-50 divide-opacity-50 divide-y px-4 ">
 
                                 {% for suggestion in suggestions_username_profile_list %}
-                                <div class="flex items-center justify-between py-3">
-                                    <div class="flex flex-1 items-center space-x-4">
+
+                                <div class="flex justify-between items-center px-3 py-3 space-x-4">
+                                    <!--<div class="profilepicture1">
                                         <a href="/profile/{{suggestion.user}}">
-                                            <img src="{{suggestion.profile_img.url}}" class="bg-gray-200 rounded-full w-10 h-10">
+                                            <img src="{{suggestion.profile_img.url}}" class="profilepicture1">
+
                                         </a>
+                                        </div>-->
+                                    <img src="{{suggestion.profile_img.url}}" class="bg-gray-200 border border-white rounded-full w-10 h-10">
+                                    <div class="flex flex-1 items-center space-x-4">
+
                                         <div class="flex flex-col">
                                             <span class="block capitalize font-semibold"> {{suggestion.user}} </span>
                                             <span class="block capitalize text-sm"> {{suggestion.bio}} </span>
                                         </div>
+
                                     </div>
-                                    
+
                                     <a href="/profile/{{suggestion.user}}" class="border border-gray-200 font-semibold px-4 py-1 rounded-full hover:bg-pink-600 hover:text-white hover:border-pink-600 "> View Profile </a>
                                 </div>
                                 {% endfor %}
