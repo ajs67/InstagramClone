@@ -21,15 +21,15 @@
 	<style>
 		.button1 {
 			display: inline-block;
-			color: yellow;
-			background-color: yellow;
+			color: pink;
+			background-color: pink;
 		}
 		button:hover{
-			background-color: yellow;
+			background-color: pink;
 		}
 		a:hover{
             box-shadow: 0 0 4px 4px rgba(0,140,186,0.5);
-            background-color: yellow;
+
         }
 
 
@@ -47,8 +47,8 @@
 
 				<form action="/follow" method="POST">
 					{% csrf_token %}
-					<div class="add-btn px-3 py-5 color: yellow;" >
-					<a href="/" style="color: black; font-size: 27px;"><b>Home</b>
+					<div class="add-btn px-3 py-5 color: yellow; background-color: yellow;" >
+					<a href="/" style="color: black; font-size: 27px; background-color: yellow;"><b>Home</b>
 					</a>&nbsp&nbsp&nbsp
 <!--					<a href="/" style="background-color: #ffc0cb; border: #ffc0cb;">Home</a>-->
 					{% if user_post_length == 0 %}
