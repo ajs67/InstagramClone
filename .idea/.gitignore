@@ -141,3 +141,8 @@ GitHub.sublime-settings
 .history
 
 social_media.zip
+
+
+# Databases #
+db.sqlite3
+db.sqlite3.orig
