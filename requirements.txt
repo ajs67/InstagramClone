@@ -1,3 +1,2 @@
-django
-pysqlite3
-waitress
+Django==4.0.6
+waitress==2.1.2
